@@ -1,0 +1,24 @@
+version: "3"
+services:
+    python:
+        build: .
+        command: python3 deleteTable.py 
+        volumes:
+            - .:/usr/src/app
+        environment:
+            IPDB: 172.22.0.3
+            DB: stupidity
+            USER: root
+            PASSWORD: dimitrou    
+        networks:
+            default:
+                ipv4_address: 172.22.0.4   
+networks:
+    default:
+        external: 
+            name: stupid  
+            
+
+    
+    
+
